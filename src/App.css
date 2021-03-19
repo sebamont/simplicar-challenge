@@ -1,38 +1,57 @@
+/*Defining colors, fonts and other global variables */
+:root {
+  --nissan-red: #d81921;
+  --secondary-dark: #282b2e;
+}
+
+@font-face {
+  font-family: "SF UI Display Ultralight";
+  src: url("./static/fonts/sf-ui-display-ultralight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Thin";
+  src: url("./static/fonts/sf-ui-display-thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Light";
+  src: url("./static/fonts/sf-ui-display-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display";
+  src: url("./static/fonts/sf-ui-display-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Semibold";
+  src: url("./static/fonts/sf-ui-display-semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Bold";
+  src: url("./static/fonts/sf-ui-display-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Heavy";
+  src: url("./static/fonts/sf-ui-display-heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Black";
+  src: url("./static/fonts/sf-ui-display-black.woff") format("woff");
+}
+
+/* Reseting space */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  position: relative;
+  overflow: hidden;
 }

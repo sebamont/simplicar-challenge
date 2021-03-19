@@ -1,0 +1,118 @@
+/* CONTAINER */
+#header-container {
+  height: calc(100vh);
+  width: 100%;
+  position: relative;
+  top: -100px;
+}
+
+/* IMAGE */
+#header-container img {
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  z-index: 0;
+}
+
+/* JUMBOTRON */
+#header-container #jumbotron-container {
+  position: absolute;
+  top: 0;
+  width: 80vw;
+  max-height: 100vh;
+}
+
+.jumbotron {
+  font-family: "SF UI Display";
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  margin-left: 10%;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 60px 2px;
+  font-size: 16px;
+}
+
+/* Desktop view. */
+@media (orientation: landscape) {
+  #header-container #jumbotron-container {
+    width: 50vw;
+  }
+  .jumbotron {
+    margin-top: 40vh;
+    margin-left: 20%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 60px 2px;
+  }
+}
+
+/* HD Resolution fixing */
+@media (orientation: landscape) and (max-height: 800px) {
+  #header-container #jumbotron-container {
+    width: 90vw;
+  }
+  .jumbotron {
+    margin-left: 5%;
+    margin-top: 60vh;
+  }
+}
+
+.jumbotron h1 {
+  font-family: "SF UI Display Black";
+}
+
+@media (max-height: 600px), (max-width: 300px) {
+  .jumbotron h1 {
+    font-size: 28px !important;
+  }
+}
+
+.jumbotron button {
+  background: var(--nissan-red);
+  font-family: "SF UI Display Light";
+  border: 0;
+  width: 230px;
+  position: relative;
+  text-align: left;
+}
+
+@media (max-width: 330px) {
+  .jumbotron button {
+    width: 180px;
+  }
+}
+
+.jumbotron button span {
+  position: absolute;
+  left: 80%;
+  animation: animateArrow 0.5s linear forwards infinite;
+}
+
+@keyframes animateArrow {
+  from {
+    left: 80%;
+  }
+  to {
+    left: 82%;
+  }
+}
+
+/* OWL CAROUSEL */
+#header-container #carousel-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  background: white;
+}
+
+.owl-stage {
+  max-height: 100px;
+}
+#header-owl-carousel .item {
+  width: 10vh;
+}
+
+#header-owl-carousel img {
+  height: 10vh;
+}
