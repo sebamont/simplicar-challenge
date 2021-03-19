@@ -1,0 +1,4 @@
+#not-found-container {
+  height: calc(100vh - 100px);
+  margin-bottom: 100px;
+}
