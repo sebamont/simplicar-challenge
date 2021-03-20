@@ -1,15 +1,18 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import './Header.css'
 
-import nissanLandscape from '../../static/images/nissanLandscape.jpg';
-import nissanHigh from '../../static/images/nissanHigh.jpg';
 
 //Owl carousel
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+//IMPORT STATIC PHOTOS
+import nissanLandscape from '../../static/images/nissanLandscape.jpg';
+import nissanHigh from '../../static/images/nissanHigh.jpg';
 
 //importing car brands imgs for owl carousel
 import alfaRomeo from '../../static/images/car brands/alfaRomeo.png';
@@ -45,7 +48,6 @@ const HeaderComp = () => {
             <div id="carousel-container">
                 <HeaderCarousel />
             </div>
-            
         </div>
     )
 }
@@ -55,7 +57,7 @@ const HeaderJumbotron = () => {
         <Jumbotron>
                 <h1 className="display-5">TU PRÓXIMO AUTO, ONLINE</h1>
                 <p>Las mejores marcas, modelos y precios. Entrá y solicitá una cotización</p>
-                <Button>Ingresá al Store <span><i className="fas fa-arrow-circle-right"></i></span> </Button>
+                <Button tag={Link} to="/store">Ingresá al Store <span><i className="fas fa-arrow-circle-right"></i></span> </Button>
             </Jumbotron>
     )
 }

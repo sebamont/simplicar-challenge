@@ -1,4 +1,57 @@
 #not-found-container {
   height: calc(100vh - 100px);
   margin-bottom: 100px;
+  font-family: "SF UI Display Black";
+  position: relative;
+  overflow: hidden;
+}
+
+#not-found-container a {
+  background: var(--secondary-dark);
+  font-family: "SF UI Display Light";
+  border: 0;
+  width: 230px;
+  position: relative;
+  text-align: center;
+}
+
+#not-found-container a:nth-child(3) {
+  margin-top: 10px;
+  background: var(--nissan-red);
+}
+
+#not-found-container span {
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(146, 121, 123, 0.5);
+}
+
+#car-one {
+  top: 10px;
+  left: -500px;
+  animation: leftToRightCar 8s ease-in-out forwards infinite;
+}
+
+#car-two {
+  transform: scaleX(-1);
+  bottom: 0;
+  right: 0;
+  animation: rightToLeftCar 7s ease-in-out forwards infinite;
+}
+
+@keyframes leftToRightCar {
+  from {
+    left: -20vw;
+  }
+  to {
+    left: 120vw;
+  }
+}
+@keyframes rightToLeftCar {
+  from {
+    right: -20vw;
+  }
+  to {
+    right: 120vw;
+  }
 }

@@ -67,7 +67,7 @@
   }
 }
 
-.jumbotron button {
+.jumbotron a {
   background: var(--nissan-red);
   font-family: "SF UI Display Light";
   border: 0;
@@ -77,12 +77,12 @@
 }
 
 @media (max-width: 330px) {
-  .jumbotron button {
+  .jumbotron a {
     width: 180px;
   }
 }
 
-.jumbotron button span {
+.jumbotron a span {
   position: absolute;
   left: 80%;
   animation: animateArrow 0.5s linear forwards infinite;
