@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
+
+import {GlobalContext} from '../../contexts/GlobalState'
 
 import './ProductList.css';
 
 const ProductListComp = () => {
+
+    const {vehicles, loading, error, getVehicles} = useContext(GlobalContext);
+
+    useEffect(()=>{
+        getVehicles();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        
+    }, [])
+
+    if(loading){
+        return(<div id="product-list-container"><p>Loading...</p></div>)
+    }
+    if(error){
+        return(<div id="product-list-container"><p>{error}</p></div>)
+    }
     return(
         <div id="product-list-container">
-
+            <p>averga</p>
+            {vehicles.length}
         </div>
     )
 }
