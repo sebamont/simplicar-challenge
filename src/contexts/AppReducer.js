@@ -10,13 +10,19 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                vehicleById: state.vehicles.filter(vehicle => vehicle.id === action.payload)
+                vehicleById: state.vehicles.find(vehicle => vehicle.id === action.payload)
             }
         case 'VEHICLE_ERROR':
             return{
                 ...state,
                 loading: false,
                 error: action.payload
+            }
+        case 'SEND_CONTACT':
+            return{
+                ...state,
+                loading: false,
+                postMsg: action.payload
             }
         default:
             return state;

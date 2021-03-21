@@ -6,7 +6,8 @@ const initialState = {
     vehicles: [],
     vehicleById: [],
     error: null,
-    loading: true
+    loading: true,
+    postMsg: null,
 }
 
 export const GlobalContext = createContext(initialState);
@@ -47,12 +48,30 @@ export const GlobalProvider = ({children}) => {
         }
     }
 
+    async function postContactInfo(contactInfo){
+        try {
+            const res = await api.post('https://4my1q6hsyo.api.quickmocker.com/lead', contactInfo);
+
+            dispatch({
+                type: 'SEND_CONTACT',
+                payload: res.data.msg,
+            })
+        } catch (err) {
+            dispatch({
+                type: 'VEHICLE_ERROR',
+                payload: 'No se pudo enviar tu consulta debido a problemas con el Servidor, por favor reintente en unos minutos'
+            })
+        }
+    }
+
+
     return(<GlobalContext.Provider value={{
         vehicles: state.vehicles,
         error: state.error,
         loading: state.loading,
         getVehicles,
-        getVehicleById
+        getVehicleById,
+        postContactInfo,
     }}>
         {children}
     </GlobalContext.Provider>)

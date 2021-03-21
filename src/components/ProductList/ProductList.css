@@ -1,3 +1,61 @@
 #product-list-container {
   min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "SF UI Display";
+  margin-bottom: 100px;
+}
+
+#slogan-banner {
+  height: 15vh;
+  width: 100%;
+  background-color: #bebebe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1em + 1vw);
+  font-family: "SF UI Display Black";
+  color: white;
+  text-transform: uppercase;
+}
+
+#filter-order-row button,
+#closed-filter-panel button {
+  font-size: calc(1em+1vw);
+  font-family: "SF UI Display Thin";
+  align-self: flex-end;
+  height: 40px;
+}
+
+.open-filter-button {
+  background: var(--secondary-dark) !important;
+  border: none !important;
+}
+
+#cards-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.card {
+  max-width: 90vw !important;
+  text-align: center;
+  border: none !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-title {
+  font-family: "SF UI Display Heavy";
+  text-transform: uppercase;
+}
+
+.card .card-subtitle span {
+  color: var(--nissan-red);
+}
+
+.card small {
+  font-family: "SF UI Display Light";
 }
