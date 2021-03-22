@@ -24,18 +24,20 @@
 
 #filter-order-row button,
 #closed-filter-panel button {
-  font-size: calc(1em+1vw);
+  font-size: 14px !important;
   align-self: flex-end;
   height: 40px;
 }
 
 .apply-filter-button {
+  font-size: 14px !important;
   background: white !important;
   color: var(--secondary-dark) !important;
   border: 2px solid var(--secondary-dark) !important;
 }
 
 .open-filter-button {
+  font-size: 14px !important;
   background: white !important;
   color: gray !important;
   border: 2px solid gray !important;
