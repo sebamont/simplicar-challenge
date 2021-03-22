@@ -1,0 +1,10 @@
+#contact-info h4 {
+  margin-top: 20px;
+  font-family: "SF UI Display Bold";
+}
+
+#contact-info hr {
+  height: 1px;
+  background: var(--nissan-red) !important;
+  border: none;
+}

@@ -14,6 +14,6 @@ Make the frontend of a website/web app with 3 pages: Home (static), Product List
 ## Instruction
 
 1. **npm install** to install dependencies.
-2. Create an .env file at the base path where we store the Bearer token for accessing API.
+2. Create an .env file at the base path where we store REACT_APP_BEARER_TOKEN.
 3. **npm start** to run on development.
 4. **npm build** to build for production.

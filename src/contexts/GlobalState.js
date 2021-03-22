@@ -4,7 +4,7 @@ import api from '../utils/api';
 
 const initialState = {
     vehicles: [],
-    vehicleById: [],
+    vehicleById: {},
     error: null,
     loading: true,
     postMsg: null,
@@ -16,6 +16,13 @@ export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(AppReducer, initialState)
     
     //ACTIONS
+    // reseting state when navigating to a different url
+    function locationChange(){
+        dispatch({
+            type: 'RESET_STATE',
+        })
+    }
+
     async function getVehicles() {
         try {
             const res = await api.get('https://4my1q6hsyo.api.quickmocker.com/product');
@@ -32,12 +39,23 @@ export const GlobalProvider = ({children}) => {
         }
     }
 
+    //had to do it this way because endpoint /product/{id} wasnt working as intended
     async function getVehicleById(id) {
         try {
-            dispatch({
-                type: 'GET_VEHICLE_BY_ID',
-                payload: id
-            })
+            const res = await api.get('https://4my1q6hsyo.api.quickmocker.com/product');
+            const filteredVeh = res.data.results.find(veh => veh.id === id);
+            if(filteredVeh){ 
+                dispatch({
+                    type: 'GET_VEHICLE_BY_ID',
+                    payload: filteredVeh
+                })
+            }
+            else{
+                dispatch({
+                    type: 'VEHICLE_ERROR',
+                    payload: 'No existe vehiculo con el ID definido, por favor utilice los botones de la tienda para asegurar el correcto ID'
+                })
+            }
         }
         catch(err){
             dispatch({
@@ -69,6 +87,9 @@ export const GlobalProvider = ({children}) => {
         vehicles: state.vehicles,
         error: state.error,
         loading: state.loading,
+        vehicleById: state.vehicleById,
+        postMsg: state.postMsg,
+        locationChange,
         getVehicles,
         getVehicleById,
         postContactInfo,

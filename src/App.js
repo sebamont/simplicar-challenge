@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavbarComp, HeaderComp, FooterComp, ProductListComp, NotFoundComp} from './components/index';
+import {NavbarComp, HeaderComp, FooterComp, ProductListComp, NotFoundComp, ProductDetailComp} from './components/index';
 import {GlobalProvider} from './contexts/GlobalState';
 
 import {
@@ -17,15 +17,10 @@ function App() {
         <div className="App">
           <NavbarComp />
           <Switch location={location} key={location.pathname}>
-          <Route exact path="/">   
-            <HeaderComp />
-          </Route>
-          <Route exact path="/store">   
-            <ProductListComp />
-          </Route>
-          <Route path="*">   
-            <NotFoundComp />
-          </Route>
+            <Route exact path="/" component={HeaderComp} />   
+            <Route exact path="/store" component={ProductListComp} />   
+            <Route exact path="/car/:id" component={ProductDetailComp} />
+            <Route path="*" component={NotFoundComp} />   
           </Switch>
           <FooterComp />  
         </div>

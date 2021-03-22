@@ -1,5 +1,14 @@
 const AppReducer = (state, action) => {
     switch(action.type){
+        case 'RESET_STATE':
+            return {
+                ...state,
+                vehicles: [],
+                vehicleById: {},
+                error: null,
+                loading: true,
+                postMsg: null
+            }
         case 'GET_VEHICLES':
             return {
                 ...state,
@@ -10,7 +19,7 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                vehicleById: state.vehicles.find(vehicle => vehicle.id === action.payload)
+                vehicleById: action.payload
             }
         case 'VEHICLE_ERROR':
             return{
